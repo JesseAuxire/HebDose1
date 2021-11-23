@@ -5,4 +5,7 @@
   <div class="story-text">
     <p><%= @story.text %></p>
   </div>
+  <div class="story-review">
+    <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
+  </div>
 </div>
