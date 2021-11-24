@@ -8,4 +8,11 @@
   <div class="story-review">
     <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
   </div>
+  <div class="all-reviews">
+    <ul class="list-group">
+      <% @story.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
