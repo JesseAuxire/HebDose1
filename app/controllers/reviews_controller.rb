@@ -9,8 +9,17 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @story_found = Story.find(params[:story_id])
     @review.story = @story_found
-    @review.save
-    redirect_to story_path(@story_found)
+     if @review.save
+      redirect_to story_path(@story_found)
+     else
+      render :new
+     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to story_path(@review.story)
   end
 
   private

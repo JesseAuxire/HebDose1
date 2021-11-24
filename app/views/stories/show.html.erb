@@ -1,18 +1,27 @@
-<div class="story-card">
-  <div class="story_title">
-    <h2><%= @story.title %></h2>
-  </div>
-  <div class="story-text">
-    <p><%= @story.text %></p>
-  </div>
-  <div class="story-review">
-    <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
-  </div>
-  <div class="all-reviews">
-    <ul class="list-group">
-      <% @story.reviews.each do |review| %>
-        <li class="list-group-item"><%= review.content %></li>
-      <% end %>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="story-card">
+        <div class="story_title">
+          <h2><%= @story.title %></h2>
+        </div>
+        <div class="story-text">
+          <p><%= @story.text %></p>
+        </div>
+        <div class="story-review">
+          <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
+        </div>
+        <div class="all-reviews">
+          <ul class="list-group">
+            <% @story.reviews.each do |review| %>
+              <li class="list-group-item">
+                <%= review.content %>
+                <%= link_to "Supprimer commenaire", review_path(review), method: :delete, data: { confirm: "Êtes-vous sûr?" } %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
