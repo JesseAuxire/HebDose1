@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :stories, only: [:index, :show] do 
     resources :reviews, only: [:new, :create]
   end
+  resources :reviews, only: [:destroy]
 end
