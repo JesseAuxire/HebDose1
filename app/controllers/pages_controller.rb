@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @last_stories = Story.last(4).reverse
   end
+
+  def profile
+
+    
+  end
 end
