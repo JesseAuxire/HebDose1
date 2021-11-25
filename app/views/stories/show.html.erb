@@ -9,6 +9,7 @@
           <p><%= @story.text %></p>
         </div>
         <div class="story-review">
+          <p><%= link_to "Retour", stories_path %>
           <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
         </div>
         <div class="all-reviews">
@@ -16,7 +17,7 @@
             <% @story.reviews.each do |review| %>
               <li class="list-group-item">
                 <%= review.content %>
-                <%= link_to "Supprimer commenaire", review_path(review), method: :delete, data: { confirm: "Êtes-vous sûr?" } %>
+                <%= link_to "Supprimer commentaire", review_path(review), method: :delete, data: { confirm: "Êtes-vous sûr?" } %>
               </li>
             <% end %>
           </ul>
