@@ -1,0 +1,7 @@
+<%= simple_form_for @story do |f| %>
+  <%= f.input :title %>
+  <%= f.input :illustration, as: :file %>
+  <%= f.input :summary, as: :text %>
+  <%= f.input :text, as: :text %>
+
+<% end %>
