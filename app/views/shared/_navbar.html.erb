@@ -13,6 +13,11 @@
       <li class="nav-item">
           <%= link_to "Histoires", stories_path, class: "nav-link" %>
       </li>
+      <% if current_user.try(:admin?) %>
+        <li class="nav-item">
+      <% end %>
+          <%= link_to "Publier", new_story_path, class: "nav-link" %>
+        </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
