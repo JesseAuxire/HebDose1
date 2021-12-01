@@ -1,0 +1,10 @@
+<div class="container">
+   <% @filter_stories.each do |filter| %>
+    <div> 
+    <%= filter.title %>
+    </div>
+    <div>
+      <%= filter.text %>
+    </div>
+   <% end %>
+</div>

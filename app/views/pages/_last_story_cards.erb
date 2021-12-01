@@ -6,4 +6,7 @@
   <div class="last-story-text">
   <p><%= last_story.text %></p>
   </div>
+  <div class="last-story-category">
+    <p><%= link_to last_story.category, filter_index_stories_path(:category) %></P>
+  </div>
 </div>

@@ -7,6 +7,11 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
+  def filter_index
+    @filter_stories = Story.where(category: params[:category])
+    @category = params[:category]
+  end
+  
   def new
     @story = Story.new
   end
@@ -27,4 +32,5 @@ class StoriesController < ApplicationController
   def story_params
     params.require(:story).permit(:title, :illustration, :text, :summary)
   end
+
 end
