@@ -6,4 +6,7 @@
   <div class="story-text">
   <p><%= story.text %></p>
   </div>
+  <div class="story-category">
+    <p><%= link_to story.category, filter_index_stories_path(@category) %></P>
+  </div>
 </div>
