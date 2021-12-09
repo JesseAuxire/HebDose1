@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :filter_index]
   def index
     @stories = Story.all
   end
