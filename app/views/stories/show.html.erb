@@ -11,6 +11,7 @@
         <div class="story-review">
           <p><%= link_to "Retour", stories_path %>
           <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
+          <%= button_to 'Like', story_likes_path(@story), method: :post%>
         </div>
         <div class="all-reviews">
           <ul class="list-group">
