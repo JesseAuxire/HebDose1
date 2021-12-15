@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create]
     resources :reviews, only: [:new, :create]
     collection do 
-      get "/category/:category_id", to: "stories#filter_index", as: :filter_index
+      get "/category/:category", to: "stories#filter_index", as: :filter_index
+      # get "/:category", to: "stories#filter_index", as: :filter_index
     end
   end
   resources :reviews, only: [:destroy]

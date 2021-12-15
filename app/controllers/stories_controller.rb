@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
   def filter_index
     @filter_stories = Story.where(category: params[:category])
     @category = params[:category]
+    # raise
   end
   
   def new
