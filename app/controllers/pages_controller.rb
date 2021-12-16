@@ -6,7 +6,13 @@ class PagesController < ApplicationController
   end
 
   def profile
+  end
 
-    
+  def nav
+    all_stories = Story.all
+    @array = []
+    all_stories.each do |story|
+      @array << story.category if !(array.include? story.category)
+    end
   end
 end
