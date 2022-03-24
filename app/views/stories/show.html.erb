@@ -11,8 +11,13 @@
         <div class="story-review">
           <p><%= link_to "Retour", stories_path %>
           <p><%= link_to "Laisser un commentaire", new_story_review_path(@story) %>
-          <%= button_to 'Like', story_likes_path(@story), method: :post%>
-          <%# <p><%= @story.likes.count "J'aime" %></p> %>
+          <% pre_like = @story.likes.find {|like| like.user_id == current_user.id} %>
+          <% if pre_like   %>
+            <%= button_to 'Unlike', story_like_path(@story, pre_like), method: :delete %>
+          <% else %>
+            <%= button_to 'Like', story_likes_path(@story), method: :post%>
+          <% end %>
+          <p><%= @story.likes.count%> <%= (@story.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </div>
         <div class="all-reviews">
           <ul class="list-group">

@@ -9,4 +9,7 @@
   <div class="last-story-category">
     <p><%= link_to last_story.category, filter_index_stories_path(:category) %></P>
   </div>
+  <div class="last-story-like">
+    <p><%= last_story.likes.count%> <%= (last_story.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  </div>
 </div>
