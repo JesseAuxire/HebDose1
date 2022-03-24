@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.save
 
-    redirect_to story_path(story)
+    redirect_to story_path(@story)
   end
 
   private
